@@ -1,0 +1,5 @@
+E:\SDP Project\EO\Mail\bin\Release\Mail.dll
+E:\SDP Project\EO\Mail\bin\Release\Mail.pdb
+E:\SDP Project\EO\Mail\obj\Release\Mail.csprojResolveAssemblyReference.cache
+E:\SDP Project\EO\Mail\obj\Release\Mail.dll
+E:\SDP Project\EO\Mail\obj\Release\Mail.pdb

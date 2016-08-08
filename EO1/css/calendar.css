@@ -1,0 +1,69 @@
+﻿body {
+}
+
+/*
+    Set the Style for parent CSS Class
+    of Calendar control
+    Parent [CssClass] = myCalendar
+*/
+.myCalendar {
+    background-color: #efefef;
+    width: 200px;
+}
+
+/*
+    Common style declaration for hyper linked text
+*/
+.myCalendar a {
+    text-decoration: none;
+}
+
+/*
+    Styles declaration for top title
+    [TitleStyle] [CssClass] = myCalendarTitle
+*/
+.myCalendar .myCalendarTitle {
+    font-weight: bold;
+}
+
+/*
+    Styles declaration for date cells
+    [DayStyle] [CssClass] = myCalendarDay
+*/
+.myCalendar td.myCalendarDay {
+    border: solid 2px #fff;
+    border-left: 0;
+    border-top: 0;
+}
+
+/*
+    Styles declaration for next/previous month links
+    [NextPrevStyle] [CssClass] = myCalendarNextPrev
+*/
+.myCalendar .myCalendarNextPrev {
+    text-align: center;
+}
+
+/*
+    Styles declaration for Week/Month selector links cells
+    [SelectorStyle] [CssClass] = myCalendarSelector
+*/
+.myCalendar td.myCalendarSelector {
+    background-color: #dddddd;
+}
+
+.myCalendar .myCalendarDay a, 
+.myCalendar .myCalendarSelector a,
+.myCalendar .myCalendarNextPrev a {
+    display: block;
+    line-height: 18px;
+}
+
+.myCalendar .myCalendarDay a:hover, 
+.myCalendar .myCalendarSelector a:hover {
+    background-color: #cccccc;
+}
+
+.myCalendar .myCalendarNextPrev a:hover {
+    background-color: #fff;
+}

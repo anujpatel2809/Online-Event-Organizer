@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="EODB" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\EODB.mdf;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="EODBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.member" Member="members">
+    <Type Name="member">
+      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PhoneNo" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Country" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DisplayPic" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Verifystatus" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="member_Event" Member="Events" ThisKey="UserId" OtherKey="UserId" Type="Event" />
+      <Association Name="member_Invitation" Member="Invitations" ThisKey="UserId" OtherKey="EventHeadId" Type="Invitation" />
+      <Association Name="member_ForgotPass" Member="ForgotPasses" ThisKey="UserId" OtherKey="UserId" Type="ForgotPass" />
+      <Association Name="member_Management" Member="Managements" ThisKey="UserId" OtherKey="EventHeadId" Type="Management" />
+      <Association Name="member_Management1" Member="Managements1" ThisKey="UserId" OtherKey="MemberId" Type="Management" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Events" Member="Events">
+    <Type Name="Event">
+      <Column Name="EventId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Edate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Venue" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="Event_Invitation" Member="Invitations" ThisKey="EventId" OtherKey="EventId" Type="Invitation" />
+      <Association Name="Event_Management" Member="Managements" ThisKey="EventId" OtherKey="EventId" Type="Management" />
+      <Association Name="member_Event" Member="member" ThisKey="UserId" OtherKey="UserId" Type="member" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Invitation" Member="Invitations">
+    <Type Name="Invitation">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EventId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EventHeadId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MemberMailId" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SequenceNo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Event_Invitation" Member="Event" ThisKey="EventId" OtherKey="EventId" Type="Event" IsForeignKey="true" />
+      <Association Name="member_Invitation" Member="member" ThisKey="EventHeadId" OtherKey="UserId" Type="member" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ForgotPass" Member="ForgotPasses">
+    <Type Name="ForgotPass">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Pass" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="member_ForgotPass" Member="member" ThisKey="UserId" OtherKey="UserId" Type="member" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Task" Member="Tasks">
+    <Type Name="Task">
+      <Column Name="TaskId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TaskName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="TStatus" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Deadline" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="NStatus" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SeqNo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Task_Management" Member="Managements" ThisKey="TaskId" OtherKey="TaskId" Type="Management" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Management" Member="Managements">
+    <Type Name="Management">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EventId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EventHeadId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MemberId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TaskId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Event_Management" Member="Event" ThisKey="EventId" OtherKey="EventId" Type="Event" IsForeignKey="true" />
+      <Association Name="member_Management" Member="member" ThisKey="EventHeadId" OtherKey="UserId" Type="member" IsForeignKey="true" />
+      <Association Name="member_Management1" Member="member1" ThisKey="MemberId" OtherKey="UserId" Type="member" IsForeignKey="true" />
+      <Association Name="Task_Management" Member="Task" ThisKey="TaskId" OtherKey="TaskId" Type="Task" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

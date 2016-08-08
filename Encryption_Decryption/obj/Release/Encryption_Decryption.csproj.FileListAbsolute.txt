@@ -1,0 +1,5 @@
+E:\SDP Project\EO\Encryption_Decryption\bin\Release\Encryption_Decryption.dll
+E:\SDP Project\EO\Encryption_Decryption\bin\Release\Encryption_Decryption.pdb
+E:\SDP Project\EO\Encryption_Decryption\obj\Release\Encryption_Decryption.csprojResolveAssemblyReference.cache
+E:\SDP Project\EO\Encryption_Decryption\obj\Release\Encryption_Decryption.dll
+E:\SDP Project\EO\Encryption_Decryption\obj\Release\Encryption_Decryption.pdb

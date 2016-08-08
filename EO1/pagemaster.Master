@@ -1,0 +1,224 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="pagemaster.master.cs" Inherits="EO1.pagemaster" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <!-- BOOTSTRAP STYLES-->
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link type="text/css" rel="stylesheet" href="css/signup.css" />
+    <!-- FONTAWESOME STYLES-->
+    <link href="css/font-awesome.css" rel="stylesheet" type="text/css" />
+    <link href="css/icon-awesome.css" rel="stylesheet" type="text/css" />
+    <!--CUSTOM BASIC STYLES-->
+    <link href="css/basic.css" rel="stylesheet" type="text/css" />
+    <!--CUSTOM MAIN STYLES-->
+    <link href="css/custom.css" rel="stylesheet" type="text/css" />
+    <link href="css/calendar.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="css/popup.css" />
+    <!-- GOOGLE FONTS-->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+
+    <link href="css/tooplate_style.css" rel="stylesheet" type="text/css" />
+
+    <link rel="stylesheet" href="css/nivo-slider.css" type="text/css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <header style="display: block">
+            <div id="wrapper">
+                <nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="welcome.aspx">Event Organizer</a>
+                    </div>
+
+                    <div class="header-right">
+
+                        <a href="invitation.aspx" class="btn btn-info" title="Pending Invitations">
+                            <asp:Label ID="invi_no" runat="server"></asp:Label>
+                            <i class="fa fa-envelope-o fa-2x"></i></a>
+                        <a href="notification.aspx" class="btn btn-primary" title="New Notification">
+                            <asp:Label ID="noti_no" runat="server"></asp:Label><i class="fa fa-bell-o fa-2x"></i></a>
+                        <div class="btn-group">
+                            <asp:ImageButton ID="udp" runat="server" data-toggle="dropdown" class="image" />
+                            <!-- <button data-toggle="dropdown" class="btn  dropdown-toggle">
+                            
+                                <asp:Image ID="Image1" runat="server" alt="" class="image" />
+                           
+                        </button>-->
+                            <ul class="dropdown-menu">
+
+                                <li>
+                                    <center><asp:ImageButton ID="disp" runat="server" CssClass="image1" OnClick="disp_Click"></asp:ImageButton></center>
+
+                                    <br />
+                                </li>
+                                <li>
+                                    <center><asp:Label ID="buname"  runat="server"  CssClass="mylab" ></asp:Label></center>
+                                </li>
+                                <li>
+                                    <center><asp:Label ID="email" runat="server" Text="Label" CssClass="mylab"></asp:Label></center>
+                                    <br />
+                                </li>
+                                <li>
+
+                                    <center> <asp:Button ID="logout" runat="server" Text="Logout" CssClass="btn btn-success" OnClick="Logout_Click"/></center>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </nav>
+
+                <!-- /. NAV TOP  -->
+                <nav class="navbar-default navbar-side" role="navigation">
+                    <div class="sidebar-collapse">
+                        <ul class="nav" id="main-menu">
+                            <li>
+                                <div class="user-img-div">
+                                    <asp:Image ID="dp" runat="server" CssClass="img-thumbnail" />
+                                    <div class="inner-text">
+                                        <asp:Label ID="name" runat="server"></asp:Label>
+                                        <br />
+                                        
+                                    </div>
+                                </div>
+
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-calendar-o"></i>Event</a>
+                                <ul class="nav-second-level nav">
+                                    <li>
+                                        <a href="addEvent.aspx"><i class="fa fa-plus"></i>Add Event</a>
+                                    </li>
+                                    <li>
+                                        <a href="viewEvent.aspx"><i class="fa fa-eye"></i>View Event</a>
+                                    </li>
+                                    <li>
+                                        <a href="viewEvent.aspx?m=true"><i class="icon-edit"></i>Modify Event</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="invite.aspx"><i class="fa fa-envelope-o"></i>Invite Member</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-tasks"></i>Task</a>
+                                <ul class="nav-second-level nav">
+                                    <li>
+                                        <a href="assignTask.aspx"><i class="fa fa-plus"></i>Assign Task</a>
+                                    </li>
+                                    <li>
+                                        <a href="manageTask.aspx"><i class="fa fa-eye"></i>Manage Task</a>
+                                    </li>
+                                    <li>
+                                        <a href="pendingTask.aspx"><i class="fa fa-eye"></i>Pending Task</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="progressbar.aspx"><i class="fa fa-line-chart"></i>Progress Bar</a>
+                            </li>
+                            <li>
+                                <a href="profile.aspx"><i class="fa fa-envelope-o"></i>Profile</a>
+                            </li>
+                            <li>
+                                <a href="#feedbackpop"><i class="fa fa-wrench"></i>Feedback</a>
+
+                            </li>
+                        </ul>
+                    </div>
+
+                </nav>
+
+                <!-- /. WRAPPER  -->
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+
+        </header>
+        <div id="feedbackpop" class="overlay">
+            <div class="popup">
+                <a class="close" href="#">&times;</a>
+                <asp:Label ID="Label1" runat="server" Text="Feedback" CssClass="h1"></asp:Label><br />
+                <br />
+                <asp:TextBox ID="feedbacktext" runat="server" CssClass="form-control" TextMode="MultiLine" Rows="5"></asp:TextBox>
+                <br />
+                <br />
+                <asp:Button ID="feedbackbutton" runat="server" Text="Send Feedback" CssClass="btn btn-info" OnClick="feedbackbutton_Click" />
+            </div>
+        </div>
+        <div id="tooplate_footer_wrapper" style="float: inherit">
+            <div id="tooplate_footer">
+                <!--<div class="col_4">
+                    <h5>Partner Links</h5>
+                    <ul class="footer_list">
+                        <li><a href="#">Flash Gallery</a></li>
+                        <li><a href="#">CSS Templates</a></li>
+                        <li><a href="#">Web Design</a></li>
+                        <li><a href="#">Premium Themes</a></li>
+                        <li><a href="#m">Web Development</a></li>
+                    </ul>
+                </div>-->
+                <div class="col_4">
+                    <h5>Why Use this Product?</h5>
+                    <ul class="footer_list">
+                        <li></li>
+                        <p>Plan and schedule you important events by creating your team and asigning task to them. Get their work updates regularly.</p>
+                    </ul>
+                </div>
+                <div class="col_4 col_1">
+                    <h5>About Us</h5>
+                    <p>This what we do best...<br />
+                        Web Design<br />
+                        Mobile Apps<br />
+                        Devlopment<br />
+                        And to help people</p>
+                </div>
+                <div class="col_4">
+                    <h5>Contact Us</h5>
+
+                    <ul class="twitter_post">
+                        <li></li>
+                        <li><a href="#feedbackpop">Give Your Feedback</a></li>
+                        <li>You can reach us at<br />
+                            devlopers.eventorganizer@gmail.com</li>
+                        <p>Follow us at</p>
+                        <div class="footer_social_button">
+                            <a href="#">
+                                <img alt="Facebook" src="image/facebook-32x32.png" title="facebook" /></a>
+                            <a href="#">
+                                <img alt="Twitter" src="image/twitter-32x32.png" title="twitter" /></a>
+                            <a href="#">
+                                <img alt="Youtube" src="image/youtube-32x32.png" title="youtube" /></a>
+
+                        </div>
+                    </ul>
+                </div>
+
+                <div class="cleaner"></div>
+            </div>
+        </div>
+        <div id="tooplate_cr_bar_wrapper">
+            <div id="tooplate_cr_bar">
+                Copyright © 2016 <a href="#">Event Organizer</a>
+            </div>
+        </div>
+        <!-- /. FOOTER  -->
+        <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
+        <!-- JQUERY SCRIPTS -->
+        <script src="js/jquery-1.10.2.js"></script>
+        <!-- BOOTSTRAP SCRIPTS -->
+        <script src="js/bootstrap.js"></script>
+        <!-- METISMENU SCRIPTS -->
+        <script src="js/jquery.metisMenu.js"></script>
+        <!-- CUSTOM SCRIPTS -->
+        <script src="js/custom.js"></script>
+        <script src="js/pace.js"></script>
+        <script src="js/modernizr-2.6.2.min.js"></script>
+    </form>
+</body>
+</html>

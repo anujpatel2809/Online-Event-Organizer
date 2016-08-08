@@ -1,0 +1,462 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2A3C0091-369E-468C-9B8A-273D108FC031}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EO1</RootNamespace>
+    <AssemblyName>EO1</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Common.Logging">
+      <HintPath>..\packages\Common.Logging.3.0.0\lib\net40\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging.Core">
+      <HintPath>..\packages\Common.Logging.Core.3.0.0\lib\net40\Common.Logging.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Core">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.2.0\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.SystemWeb">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.SystemWeb.2.2.0\lib\net45\Microsoft.AspNet.SignalR.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.2.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.2.1.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.2.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Quartz">
+      <HintPath>..\packages\Quartz.2.3.3\lib\net40\Quartz.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\Database1.mdf" />
+    <Content Include="App_Data\Database1_log.ldf">
+      <DependentUpon>Database1.mdf</DependentUpon>
+    </Content>
+    <Content Include="App_Data\EODB.mdf" />
+    <Content Include="App_Data\EODB_log.ldf">
+      <DependentUpon>EODB.mdf</DependentUpon>
+    </Content>
+    <Content Include="App_Data\Event.mdf" />
+    <Content Include="App_Data\Event_log.ldf">
+      <DependentUpon>Event.mdf</DependentUpon>
+    </Content>
+    <Content Include="css\main.css" />
+    <Content Include="css\popup.css" />
+    <Content Include="css\basic.css" />
+    <Content Include="css\bootstrap-fileupload.min.css" />
+    <Content Include="css\bootstrap-social.css" />
+    <Content Include="css\bootstrap.css" />
+    <Content Include="css\calendar.css" />
+    <Content Include="css\custom.css" />
+    <Content Include="css\error.css" />
+    <Content Include="css\font-awesome.css" />
+    <Content Include="css\icon-awesome.css" />
+    <Content Include="css\invoice.css" />
+    <Content Include="css\nivo-slider.css" />
+    <Content Include="css\prettyPhoto.css" />
+    <Content Include="css\pricing.css" />
+    <Content Include="css\tooplate_style.css" />
+    <Content Include="css\jquery.steps.css" />
+    <Content Include="css\normalize.css" />
+    <Content Include="css\wizardMain.css" />
+    <Content Include="css\signup.css" />
+    <Content Include="css\wizard.css" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\iconawesome-webfont.svg" />
+    <Content Include="forgotpass.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="home.aspx" />
+    <Content Include="Image\boy-512.png" />
+    <Content Include="Image\demoUpload.jpg" />
+    <Content Include="Image\facebook-32x32.png" />
+    <Content Include="Image\header.png" />
+    <Content Include="Image\Letter-E-blue-icon.png" />
+    <Content Include="Image\Screenshot %282%29.png" />
+    <Content Include="Image\scroll_down.png" />
+    <Content Include="Image\service_01.png" />
+    <Content Include="Image\service_02.png" />
+    <Content Include="Image\service_04.png" />
+    <Content Include="Image\tooplate_footer.png" />
+    <Content Include="Image\twitter-32x32.png" />
+    <Content Include="Image\logo.png" />
+    <Content Include="Image\Untitled.png" />
+    <Content Include="Image\users.png" />
+    <Content Include="Image\youtube-32x32.png" />
+    <Content Include="invitemail.htm" />
+    <Content Include="js\bootstrap-fileupload.js" />
+    <Content Include="js\bootstrap.js" />
+    <Content Include="js\custom.js" />
+    <Content Include="js\galleryCustom.js" />
+    <Content Include="js\jquery-1.10.2.js" />
+    <Content Include="js\jquery.metisMenu.js" />
+    <Content Include="js\jquery.mixitup.min.js" />
+    <Content Include="js\jquery.prettyPhoto.js" />
+    <Content Include="js\modernizr-2.6.2.min.js" />
+    <Content Include="js\pace.js" />
+    <Content Include="js\wizard\jquery.cookie-1.3.1.js" />
+    <Content Include="js\wizard\jquery.steps.js" />
+    <Content Include="js\wizard\modernizr-2.6.2.min.js" />
+    <Content Include="login.aspx" />
+    <Content Include="Image\login.jpg" />
+    <Content Include="css\login1.css" />
+    <Content Include="css\login2.css" />
+    <None Include="job_scheduling_data_2_0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\PublishProfiles\testeventorganizer - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\testeventorganizer - Web Deploy.pubxml" />
+    <None Include="Scripts\jquery-1.6.4-vsdoc.js" />
+    <Content Include="resetpass.aspx" />
+    <Content Include="Scripts\jquery-1.6.4.js" />
+    <Content Include="Scripts\jquery-1.6.4.min.js" />
+    <Content Include="Scripts\jquery.signalR-2.2.0.js" />
+    <Content Include="Scripts\jquery.signalR-2.2.0.min.js" />
+    <Content Include="signup.aspx" />
+    <Content Include="validatemail.aspx" />
+    <Content Include="verifyemail.aspx" />
+    <Content Include="Web.config" />
+    <Content Include="deshboard.aspx" />
+    <Content Include="addEvent.aspx" />
+    <Content Include="viewEvent.aspx" />
+    <Content Include="modifyEvent.aspx" />
+    <Content Include="viewdetails.aspx" />
+    <Content Include="invite.aspx" />
+    <Content Include="invitation.aspx" />
+    <Content Include="notification.aspx" />
+    <Content Include="assignTask.aspx" />
+    <Content Include="manageTask.aspx" />
+    <Content Include="pendingTask.aspx" />
+    <Content Include="taskdetails.aspx" />
+    <Content Include="profile.aspx" />
+    <Content Include="progressbar.aspx" />
+    <Content Include="welcome.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataClasses1.cs">
+      <DependentUpon>DataClasses1.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="DataClasses1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataClasses1.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="forgotpass.aspx.cs">
+      <DependentUpon>forgotpass.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="forgotpass.aspx.designer.cs">
+      <DependentUpon>forgotpass.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="home.aspx.cs">
+      <DependentUpon>home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="home.aspx.designer.cs">
+      <DependentUpon>home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pagemaster.Master.cs">
+      <DependentUpon>pagemaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pagemaster.Master.designer.cs">
+      <DependentUpon>pagemaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RemainderJob.cs" />
+    <Compile Include="RemainderJobScheduler.cs" />
+    <Compile Include="resetpass.aspx.cs">
+      <DependentUpon>resetpass.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="resetpass.aspx.designer.cs">
+      <DependentUpon>resetpass.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShowImage.ashx.cs">
+      <DependentUpon>ShowImage.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="signup.aspx.cs">
+      <DependentUpon>signup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="signup.aspx.designer.cs">
+      <DependentUpon>signup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="deshboard.aspx.cs">
+      <DependentUpon>deshboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="deshboard.aspx.designer.cs">
+      <DependentUpon>deshboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="addEvent.aspx.cs">
+      <DependentUpon>addEvent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="addEvent.aspx.designer.cs">
+      <DependentUpon>addEvent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Startup.cs" />
+    <Compile Include="validatemail.aspx.cs">
+      <DependentUpon>validatemail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="validatemail.aspx.designer.cs">
+      <DependentUpon>validatemail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="verifyemail.aspx.cs">
+      <DependentUpon>verifyemail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="verifyemail.aspx.designer.cs">
+      <DependentUpon>verifyemail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="viewEvent.aspx.cs">
+      <DependentUpon>viewEvent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="viewEvent.aspx.designer.cs">
+      <DependentUpon>viewEvent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="modifyEvent.aspx.cs">
+      <DependentUpon>modifyEvent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="modifyEvent.aspx.designer.cs">
+      <DependentUpon>modifyEvent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="viewdetails.aspx.cs">
+      <DependentUpon>viewdetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="viewdetails.aspx.designer.cs">
+      <DependentUpon>viewdetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="invite.aspx.cs">
+      <DependentUpon>invite.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="invite.aspx.designer.cs">
+      <DependentUpon>invite.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="invitation.aspx.cs">
+      <DependentUpon>invitation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="invitation.aspx.designer.cs">
+      <DependentUpon>invitation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="notification.aspx.cs">
+      <DependentUpon>notification.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="notification.aspx.designer.cs">
+      <DependentUpon>notification.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="assignTask.aspx.cs">
+      <DependentUpon>assignTask.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="assignTask.aspx.designer.cs">
+      <DependentUpon>assignTask.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="manageTask.aspx.cs">
+      <DependentUpon>manageTask.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="manageTask.aspx.designer.cs">
+      <DependentUpon>manageTask.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pendingTask.aspx.cs">
+      <DependentUpon>pendingTask.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pendingTask.aspx.designer.cs">
+      <DependentUpon>pendingTask.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="taskdetails.aspx.cs">
+      <DependentUpon>taskdetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="taskdetails.aspx.designer.cs">
+      <DependentUpon>taskdetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="profile.aspx.cs">
+      <DependentUpon>profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="profile.aspx.designer.cs">
+      <DependentUpon>profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="progressbar.aspx.cs">
+      <DependentUpon>progressbar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="progressbar.aspx.designer.cs">
+      <DependentUpon>progressbar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="welcome.aspx.cs">
+      <DependentUpon>welcome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="welcome.aspx.designer.cs">
+      <DependentUpon>welcome.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <Content Include="pagemaster.Master" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\iconawesome-webfont.eot" />
+    <Content Include="fonts\iconawesome-webfont.ttf" />
+    <Content Include="fonts\iconawesome-webfont.woff" />
+    <Content Include="fonts\iconAwesome.otf" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="DataClasses1.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DataClasses1.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="ShowImage.ashx" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Encryption_Decryption\Encryption_Decryption.csproj">
+      <Project>{41364eae-0f03-4aab-b742-5ecb950b1d4e}</Project>
+      <Name>Encryption_Decryption</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mail\Mail.csproj">
+      <Project>{7c450a88-1551-4b52-979f-2c71594abacf}</Project>
+      <Name>Mail</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DataClasses1.dbml.layout">
+      <DependentUpon>DataClasses1.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:50820/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
